@@ -1,0 +1,253 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local TextButton = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local TextButton_2 = Instance.new("TextButton")
+local TextButton_3 = Instance.new("TextButton")
+local TextButton_4 = Instance.new("TextButton")
+local TextButton_5 = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ScrollingFrame.Parent = ScreenGui
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
+ScrollingFrame.Position = UDim2.new(0.471918344, 0, 0.199046478, 0)
+ScrollingFrame.Size = UDim2.new(0, 359, 0, 510)
+
+TextButton.Parent = ScrollingFrame
+TextButton.BackgroundColor3 = Color3.fromRGB(166, 19, 166)
+TextButton.BorderColor3 = Color3.fromRGB(166, 19, 166)
+TextButton.Position = UDim2.new(0.019122025, 0, 0.149083018, 0)
+TextButton.Size = UDim2.new(0, 143, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Infinite Yield"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 23.000
+
+TextLabel.Parent = ScrollingFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(166, 19, 166)
+TextLabel.BorderColor3 = Color3.fromRGB(166, 19, 166)
+TextLabel.Position = UDim2.new(0.221116871, 0, 0.00890372694, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.SourceSansSemibold
+TextLabel.Text = "ZEPPELIN WARS GUI"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 20.000
+
+TextButton_2.Parent = ScrollingFrame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(166, 19, 166)
+TextButton_2.BorderColor3 = Color3.fromRGB(166, 19, 166)
+TextButton_2.Position = UDim2.new(0.526085794, 0, 0.149083018, 0)
+TextButton_2.Size = UDim2.new(0, 143, 0, 50)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "Tp Tool"
+TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.TextSize = 23.000
+
+TextButton_3.Name = ""
+TextButton_3.Parent = ScrollingFrame
+TextButton_3.BackgroundColor3 = Color3.fromRGB(166, 19, 166)
+TextButton_3.BorderColor3 = Color3.fromRGB(166, 19, 166)
+TextButton_3.Position = UDim2.new(0.283745974, 0, 0.0782240108, 0)
+TextButton_3.Size = UDim2.new(0, 143, 0, 50)
+TextButton_3.Font = Enum.Font.SourceSans
+TextButton_3.Text = "Anti-Cheat bypass"
+TextButton_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.TextSize = 23.000
+
+TextButton_4.Parent = ScrollingFrame
+TextButton_4.BackgroundColor3 = Color3.fromRGB(166, 19, 166)
+TextButton_4.BorderColor3 = Color3.fromRGB(166, 19, 166)
+TextButton_4.Position = UDim2.new(0.526085794, 0, 0.361791015, 0)
+TextButton_4.Size = UDim2.new(0, 143, 0, 50)
+TextButton_4.Font = Enum.Font.SourceSans
+TextButton_4.Text = "Infinite ammo #2"
+TextButton_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.TextSize = 23.000
+
+TextButton_5.Parent = ScrollingFrame
+TextButton_5.BackgroundColor3 = Color3.fromRGB(166, 19, 166)
+TextButton_5.BorderColor3 = Color3.fromRGB(166, 19, 166)
+TextButton_5.Position = UDim2.new(0.0191220101, 0, 0.361791015, 0)
+TextButton_5.Size = UDim2.new(0, 143, 0, 50)
+TextButton_5.Font = Enum.Font.SourceSans
+TextButton_5.Text = "Infinite ammo"
+TextButton_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_5.TextSize = 23.000
+
+TextLabel_2.Parent = ScrollingFrame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(166, 19, 166)
+TextLabel_2.BorderColor3 = Color3.fromRGB(166, 19, 166)
+TextLabel_2.Position = UDim2.new(0.0565052927, 0, 0.240409404, 0)
+TextLabel_2.Size = UDim2.new(0, 305, 0, 80)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Look on the v3rm tab to see how to use inf ammo"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 18.000
+
+-- Scripts:
+
+local function ZSFDENN_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	function Clicked() 
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end 
+	script.Parent.MouseButton1Down:connect(Clicked)
+end
+coroutine.wrap(ZSFDENN_fake_script)()
+local function ZVAVR_fake_script() -- TextButton_2.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_2)
+
+	function Clicked() 
+		local plr = game:GetService("Players").LocalPlayer
+		local mouse = plr:GetMouse()
+	
+		local tool = Instance.new("Tool")
+		tool.RequiresHandle = false
+		tool.Name = "Click Teleport"
+	
+		tool.Activated:Connect(function()
+			local root = plr.Character.HumanoidRootPart
+			local pos = mouse.Hit.Position+Vector3.new(0,2.5,0)
+			local offset = pos-root.Position
+			root.CFrame = root.CFrame+offset
+		end)
+	
+		tool.Parent = plr.Backpack
+	end 
+	script.Parent.MouseButton1Down:connect(Clicked)
+end
+coroutine.wrap(ZVAVR_fake_script)()
+local function LYAKAID_fake_script() -- TextButton_3.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_3)
+
+	function Clicked() 
+		local mt = getrawmetatable(game)
+		setreadonly(mt, false)
+	
+		local namecall = mt.__namecall
+	
+		mt.__namecall = newcclosure(function(self, ...)
+			local method = getnamecallmethod()
+			local args = {...}
+	
+			if method == "FireServer" then
+				if tostring(self) == "SettingEvent" then
+					if args[1] == "CL" then
+						return;
+					end
+				elseif tostring(self) == "KickEvent" then
+					return;
+				elseif tostring(self) ~= "KickEvent" and tostring(self) ~= "SettingEvent" then
+					return namecall(self, table.unpack(args))
+				end
+			else
+				return namecall(self, table.unpack(args))
+			end
+		end)
+	
+		print("Loaded Anti-Cheat Bypass!");
+	end 
+	script.Parent.MouseButton1Down:connect(Clicked)
+end
+coroutine.wrap(LYAKAID_fake_script)()
+local function PIFF_fake_script() -- ScrollingFrame.DraggableScript 
+	local script = Instance.new('LocalScript', ScrollingFrame)
+
+	--This script was created by Tiffblocks and uploaded by me :P
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(PIFF_fake_script)()
+local function QMHOLAD_fake_script() -- TextButton_4.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_4)
+
+	function Clicked() 
+		local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
+		local scriptPath = game:GetService("Players").LocalPlayer.Backpack.Luger.GunScript_Local
+		local closureName = "Reload"
+		local upvalueIndex = 5
+		local closureConstants = {
+			[1] = "LimitedAmmoEnabled",
+			[2] = "AmmoPerMag",
+			[3] = "TweenInfo",
+			[4] = "new",
+			[5] = aux.placeholderUserdataConstant,
+			[6] = "TweenLengthNAD"
+		}
+	
+		local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
+		local value = 69696969
+	
+	
+		-- DO NOT RELY ON THIS FEATURE TO PRODUCE 100% FUNCTIONAL SCRIPTS
+		debug.setupvalue(closure, upvalueIndex, value)
+	end 
+	script.Parent.MouseButton1Down:connect(Clicked)
+end
+coroutine.wrap(QMHOLAD_fake_script)()
+local function GINCM_fake_script() -- TextButton_5.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_5)
+
+	function Clicked() 
+		local owner = "Upbolt"
+		local branch = "revision"
+	
+		local function webImport(file)
+			return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+		end
+	
+		webImport("init")
+		webImport("ui/main")
+	end 
+	script.Parent.MouseButton1Down:connect(Clicked)
+end
+coroutine.wrap(GINCM_fake_script)()
